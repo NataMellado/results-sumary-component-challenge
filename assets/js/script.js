@@ -1,3 +1,4 @@
+// Render scores from the JSON file //
 fetch('../data.json')
     .then(response => response.json())
     .then(data => {
@@ -5,44 +6,51 @@ fetch('../data.json')
 
         data.forEach(item => {
             const itemElement = document.createElement('div');
-            itemElement.classList.add('scores-item');
+            itemElement.classList.add('scores-item', `${item.category.toLowerCase()}`);
 
-            // Crear elemento de imagen y establecer la ruta desde el JSON
+            const categoryContainer = document.createElement('div');
+            categoryContainer.classList.add('category-container');
+
             const iconElement = document.createElement('img');
             iconElement.classList.add('icon');
             iconElement.src = item.icon;
-            iconElement.alt = `${item.category}`; // Agrega un atributo alt para accesibilidad
+            iconElement.alt = `${item.category}`; 
 
-            // Crear párrafo con categoría y establecer clase
             const categoryElement = document.createElement('p');
             categoryElement.classList.add('category');
             categoryElement.textContent = item.category;
 
-            // Crear contenedor para el puntaje
-            const scoreWrapper = document.createElement('div');
-            scoreWrapper.classList.add('score-wrapper');
+            categoryContainer.appendChild(iconElement);
+            categoryContainer.appendChild(categoryElement);
 
-            // Crear párrafo con puntaje y establecer clase
             const scoreElement = document.createElement('p');
             scoreElement.classList.add('score');
-            scoreElement.textContent = item.score;
 
-            // Crear párrafo con "/ 100" y establecer clase
             const slashElement = document.createElement('span');
             slashElement.classList.add('slash');
             slashElement.textContent = ' / 100';
 
-            // Agregar párrafos al contenedor de puntaje
-            scoreWrapper.appendChild(scoreElement);
-            scoreWrapper.appendChild(slashElement);
+            scoreElement.appendChild(document.createTextNode(`${item.score} `)); 
+            scoreElement.appendChild(slashElement);
 
-            // Agregar elementos al contenedor principal
-            itemElement.appendChild(iconElement);
-            itemElement.appendChild(categoryElement);
-            itemElement.appendChild(scoreWrapper);
+            itemElement.appendChild(categoryContainer);
+            itemElement.appendChild(scoreElement);
 
-            // Agregar el elemento al contenedor principal
             scoresContainer.appendChild(itemElement);
         });
     })
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
+// Render average score from the JSON file //
+fetch('../data.json')
+    .then(response => response.json())
+    .then(data => {
+      const totalScore = data.reduce((sum, item) => sum + item.score, 0);
+
+      const averageScore = Math.round(totalScore / data.length);
+  
+      const averageScoreElement = document.getElementById('average-score');
+      averageScoreElement.textContent = `${averageScore}`;
+    })
+    .catch(error => console.error('Error al cargar el archivo JSON:', error));
+  

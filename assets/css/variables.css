@@ -1,0 +1,62 @@
+:root {
+    /* Primary */
+    --clr-pr-light-red: hsl(0, 100%, 67%);
+    --clr-pr-orangey-yellow: hsl(39, 100%, 56%);
+    --clr-pr-green-teal: hsl(166, 100%, 37%);
+    --clr-pr-cobalt-blue: hsl(234, 85%, 45%);
+  
+    /* Pastel */
+    --clr-pt-light-red: hsl(0, 100%, 97%);
+    --clr-pt-orangey-yellow: hsl(39, 100%, 97%);
+    --clr-pt-green-teal: hsl(166, 100%, 97%);
+    --clr-pt-cobalt-blue: hsl(234, 100%, 97%);
+  
+    /* Gradient background */
+    --grd-light-slate-blue: hsl(252, 100%, 67%); 
+    --grd-light-royal-blue: hsl(241, 81%, 54%); 
+    
+    /* Gradient circle */
+    --grd-violet-blue: hsla(256, 72%, 46%, 1); 
+    --grd-persian-blue: hsla(241, 72%, 46%, 0);
+  
+    /* Neutral */
+    --nt-white: hsl(0, 0%, 100%);
+    --nt-pale-blue: hsl(221, 100%, 96%);
+    --nt-light-lavender: hsl(241, 100%, 89%);
+    --nt-dark-gray-blue: hsl(224, 30%, 27%);
+    --nt-gray: hsl(0, 0%, 65%);
+  
+    /* Font */
+    --ff-primary: 'Hanken Grotesk', sans-serif;
+  
+    /* Font-size */
+    --fs-h1: 1.5rem;
+    --fs-h2: 4.563rem;
+    --fs-h3: 2rem;
+    --fs-p: 1.125rem;
+  
+    /* Font-weight */
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+  
+    /* Border-radius */
+    --brad-card: 2rem;
+    --brad-category: 0.75rem;
+    --brad-btn: 1.75rem;
+  
+    /* Size circle */
+    --size-circle: 12.5rem;
+  
+  }
+  
+  @media (max-width: 783px){
+    :root {
+      /* Font-size */
+      --fs-h1: 1.125rem;
+      --fs-h2: 3.5rem;
+      --fs-h3: 1.5rem;
+      --fs-p: 1rem;
+      --brad-card: 0 0 2rem 2rem;
+      --size-circle: 8.75rem;
+  }}
