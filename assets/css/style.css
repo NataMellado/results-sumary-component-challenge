@@ -1,0 +1,195 @@
+@font-face {
+  font-family: 'Hanken Grotesk';
+  src: url(../fonts/HankenGrotesk-VariableFont_wght.ttf) format('truetype');
+}
+
+:root {
+  /* Primary */
+  --clr-pr-light-red: hsl(0, 100%, 67%);
+  --clr-pr-orangey-yellow: hsl(39, 100%, 56%);
+  --clr-pr-green-teal: hsl(166, 100%, 37%);
+  --clr-pr-cobalt-blue: hsl(234, 85%, 45%);
+
+  /* Pastel */
+  --clr-p-light-red: hsl(0, 50%, 67%);
+  --clr-p-orangey-yellow: hsl(39, 50%, 56%);
+  --clr-p-green-teal: hsl(166, 50%, 37%);
+  --clr-p-cobalt-blue: hsl(234, 35%, 45%);
+
+  /* Gradient background */
+  --grd-light-slate-blue: hsl(252, 100%, 67%); 
+  --grd-light-royal-blue: hsl(241, 81%, 54%); 
+  
+  /* Gradient circle */
+  --grd-violet-blue: hsla(256, 72%, 46%, 1); 
+  --grd-persian-blue: hsla(241, 72%, 46%, 0);
+
+  /* Neutral */
+  --nt-white: hsl(0, 0%, 100%);
+  --nt-pale-blue: hsl(221, 100%, 96%);
+  --nt-light-lavender: hsl(241, 100%, 89%);
+  --nt-dark-gray-blue: hsl(224, 30%, 27%);
+
+  /* Font */
+  --ff-primary: 'Hanken Grotesk', sans-serif;
+
+  /* Font-size */
+  --fs-h1: 1.5rem;
+  --fs-h2: 4.563rem;
+  --fs-h3: 2rem;
+  --fs-p: 1.125rem;
+
+  /* Font-weight */
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  /* Border-radius */
+  --brad-card: 2rem;
+  --brad-category: 0.75rem;
+  --brad-btn: 1.75rem;
+}
+
+@media (max-width: 425px){
+  :root {
+    /* Font-size */
+    --fs-h1: 1.125rem;
+    --fs-h2: 3.5rem;
+    --fs-h3: 1.5rem;
+    --fs-p: 1rem;
+}}
+
+@media (max-width: 783px){
+  :root {
+    /* Border-radius */
+    --brad-card: 0 0 2rem 2rem;
+}}
+
+/* Set core defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  @media (max-width: 783px){
+    align-items: baseline;;
+  }
+}
+
+/* Containers */
+.result-card {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(0, 368px));
+  max-width: 736px;
+  margin: 1.5rem;
+  background-color: var(--nt-white);
+  border-radius: var(--brad-card);
+  box-shadow: 2rem 1rem 3rem var(--nt-pale-blue);
+
+    @media (max-width: 783px){
+      grid-template-columns: minmax(0, 600px);
+      box-shadow: 0 0 0 0;
+      margin:0;
+    }
+}
+
+.result-card-final {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  padding: 2.375rem 3.75rem 0;
+  border-radius: var(--brad-card);
+  background: linear-gradient(to bottom, var(--grd-light-slate-blue), var(--grd-light-royal-blue));
+
+  @media (max-width: 425px){
+    padding-top: 1.5rem;
+  }
+}
+
+.result-card-summary {
+  display: grid;
+  
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--nt-white);
+  border-radius: var(--brad-card);
+}
+
+.scores-item {
+  display: flex;
+  align-items: center;
+  background-color: var(--nt-white);
+  border: 1px solid #ccc;
+}
+
+
+/* Typography */
+main {
+  font-family: var(--ff-primary);
+}
+
+.result-card-final {
+
+  h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-600);
+  color: var(--nt-light-lavender);
+  }
+
+  h2 {
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-700);
+    color: var(--nt-white);
+  }
+
+  h3 {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-600);
+    color: var(--nt-white);
+  }
+
+  p {
+    font-size: var(--fs-p);
+    font-weight: var(--fw-500);
+    color: var(--nt-light-lavender);
+  }
+}
+
+
+
+  
+  .icon {
+    margin: 10px; /* Ajusta el margen según tus necesidades */
+  }
+  
+  .category {
+    font-weight: bold; /* Ajusta los estilos según tus necesidades */
+  }
+  
+  /* Estilos para el contenedor del puntaje */
+.score-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estilos para el puntaje */
+  .score {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2ecc71; /* Color verde, puedes ajustar según tus preferencias */
+  }
+  
+  /* Estilos para la parte "/ 100" */
+  .slash {
+    font-size: 18px;
+    color: #3498db; /* Color azul, puedes ajustar según tus preferencias */
+    margin-left: 5px; /* Ajusta el espaciado según tus necesidades */
+  } */
