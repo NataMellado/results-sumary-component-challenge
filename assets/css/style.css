@@ -12,10 +12,6 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-
-  @media (max-width: 783px){
-    align-items: baseline;;
-  }
 }
 
 /* Containers */
@@ -29,12 +25,6 @@ body {
   background-color: var(--nt-white);
   border-radius: var(--brad-card);
   box-shadow: 2rem 1rem 3rem var(--nt-pale-blue);
-
-    @media (max-width: 783px){
-      grid-template-columns: minmax(0, 550px);
-      box-shadow: 0 0 0 0;
-      margin:0;
-    }
 }
 
 .result-card-final {
@@ -46,9 +36,6 @@ body {
   border-radius: var(--brad-card);
   background: linear-gradient(to bottom, var(--grd-light-slate-blue), var(--grd-light-royal-blue));
 
-  @media (max-width: 425px){
-    padding-top: 1.5rem;
-  }
 }
 
 .final-score-wrapper {
@@ -67,10 +54,6 @@ body {
   padding: 2.375rem 2.5rem 0;
   background-color: var(--nt-white);
   border-radius: var(--brad-card);
-
-  @media (max-width: 425px){
-    padding: 1.5rem 1.875rem 0;
-  } 
 }
 
 #scores-container {
@@ -80,23 +63,23 @@ body {
   background-color: var(--nt-white);
   margin-top: 1.75rem;
   margin-bottom: 2.5rem;
- 
-  div {
-    border-radius: var(--brad-category);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    min-height: 3.5rem;
-    justify-content: space-between;
-  }
+}
 
-  .scores-item {
-    padding: 0 1rem;
-  }
+#scores-container div {
+  border-radius: var(--brad-category);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 3.5rem;
+  justify-content: space-between;
+}
 
-  .category-container {
-    gap: 1rem;
-  }
+.scores-item {
+  padding: 0 1rem;
+}
+
+.category-container {
+  gap: 1rem;
 }
 
 .btn {
@@ -108,81 +91,77 @@ body {
   margin-bottom: 2.5rem;
 }
 
-
 /* Typography */
 main {
   font-family: var(--ff-primary);
-
-  h1 {
-    font-size: var(--fs-h1);
-    font-weight: var(--fw-700);
-    }
-
-  h2 {
-    font-size: var(--fs-h2);
-    font-weight: var(--fw-700);
-  }
-
-  h3 {
-    font-size: var(--fs-h3);
-    font-weight: var(--fw-600);
-  }
-
-  p {
-    font-size: var(--fs-p);
-    font-weight: var(--fw-500);
-  }
 }
 
-.result-card-final {
-
-  h1,
-  p {
-  color: var(--nt-light-lavender);
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-700);
   }
 
-  h2,
-  h3 {
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-700);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-600);
+}
+
+p {
+  font-size: var(--fs-p);
+  font-weight: var(--fw-500);
+}
+
+
+/* Colors */
+.result-card-final h1,
+.result-card-final p {
+color: var(--nt-light-lavender);
+}
+
+.result-card-final h2,
+.result-card-final h3 {
     color: var(--nt-white);
   }
-}
 
-.result-card-summary {
-
-  h1,
-  .score {
+.result-card-summary h1,
+.result-card-summary .score {
     color: var(--nt-dark-gray-blue);
   }
 
-  p {
+.result-card-summary p {
     font-weight: var(--fw-700);
   }
 
-  .reaction {
-    color: var(--clr-pr-light-red);
-    background-color: var(--clr-pt-light-red);
-  }
-
-  .memory {
-    color: var(--clr-pr-orangey-yellow);
-    background-color: var(--clr-pt-orangey-yellow);
-  }
-
-  .verbal {
-    color: var(--clr-pr-green-teal);
-    background-color: var(--clr-pt-green-teal);
-  }
-
-  .visual {
-    color: var(--clr-pr-cobalt-blue);
-    background-color: var(--clr-pt-cobalt-blue);
-  }
-
-  .slash {
-    color: var(--nt-gray);
-  }
+.reaction {
+  color: var(--clr-pr-light-red);
+  background-color: var(--clr-pt-light-red);
 }
 
+.memory {
+  color: var(--clr-pr-orangey-yellow);
+  background-color: var(--clr-pt-orangey-yellow);
+}
+
+.verbal {
+  color: var(--clr-pr-green-teal);
+  background-color: var(--clr-pt-green-teal);
+}
+
+.visual {
+  color: var(--clr-pr-cobalt-blue);
+  background-color: var(--clr-pt-cobalt-blue);
+}
+
+.slash {
+  color: var(--nt-gray);
+}
+
+/* Buttons */
 .btn {
   background-color: var(--nt-dark-gray-blue);
   color: var(--nt-white);
@@ -193,3 +172,29 @@ main {
   background: linear-gradient(to bottom, var(--grd-light-slate-blue), var(--grd-light-royal-blue) );
   cursor: pointer;
 }
+
+/* Media Queries */
+@media (max-width: 783px){
+
+  body {
+    align-items: baseline;;
+  }
+
+  .result-card {  
+    grid-template-columns: minmax(0, 550px);
+    box-shadow: 0 0 0 0;
+    margin:0;
+    }
+}
+
+
+@media (max-width: 425px){
+  
+  .result-card-final {
+    padding-top: 1.5rem;
+  }
+
+  .result-card-summary {
+    padding: 1.5rem 1.875rem 0;
+  }
+} 
