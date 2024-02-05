@@ -1,5 +1,5 @@
 // Render scores from the JSON file //
-fetch('../data.json')
+fetch("./docs/data.json")
     .then(response => response.json())
     .then(data => {
         const scoresContainer = document.getElementById('scores-container');
@@ -42,7 +42,7 @@ fetch('../data.json')
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
 
 // Render average score from the JSON file //
-fetch('../data.json')
+fetch("./docs/data.json")
     .then(response => response.json())
     .then(data => {
       const totalScore = data.reduce((sum, item) => sum + item.score, 0);
