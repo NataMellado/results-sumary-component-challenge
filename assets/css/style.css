@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 /* Containers */
@@ -189,7 +189,7 @@ color: var(--nt-light-lavender);
 
 
 @media (max-width: 425px){
-  
+
   .result-card-final {
     padding-top: 1.5rem;
   }
